@@ -1,4 +1,5 @@
 #include<iostream>
+#include<math.h>
 using namespace std;
 int reverse(int number)
 {
@@ -17,6 +18,21 @@ int main()
     int n;
     cout<<"Giver An Integer: ";
     cin>>n;
-    cout<<reverse(n);
+    int sum= 0;
+    int number=n;  
+    while(n>0)
+    {     
+        int digit= n%10;
+        sum+= digit*digit*digit;
+        n=n/10;
+    }
+    
+ 
+    if(sum == number)
+    {
+        cout<<number<<" Is An Armstrong Number";
+    }
+    else
+    cout<<number<<" Is Not An Armstrong Number";
     return 0;
 }
